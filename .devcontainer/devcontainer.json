@@ -3,11 +3,14 @@
 {
 	"name": "Python 3",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/python:1-3.12-bullseye",
-
-	"containerEnv": {
-        "PYTHONUNBUFFERED": "1"
+    "build": { 
+        "context": "..",
+        "dockerfile": "Dockerfile"
     },
+
+    "mounts": [
+        "source=python-devcontainer-bashhistory,target=/commandhistory,type=volume"
+    ],
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -16,7 +19,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "pip3 install --user -r requirements.txt",
+    "postCreateCommand": "sudo chown -R $(whoami): /commandhistory",
 
 	// Configure tool-specific properties.
     "customizations": {
@@ -27,7 +30,16 @@
                 "streetsidesoftware.code-spell-checker",
                 "streetsidesoftware.code-spell-checker-spanish",
                 "mhutchie.git-graph"
-            ]
+            ],
+
+			"settings": {
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "terminal.integrated.profiles.linux": {
+                    "zsh": {
+                        "path": "/usr/bin/zsh"
+                    }
+                }
+            }
         }
     }
 
