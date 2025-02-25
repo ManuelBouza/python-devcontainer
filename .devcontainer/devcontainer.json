@@ -27,7 +27,8 @@
             "extensions": [
 				"charliermarsh.ruff",
 				"tamasfe.even-better-toml",
-				"ms-python.mypy-type-checker"
+				"ms-python.mypy-type-checker",
+				"gnramsay.create-python-module"
 			],
 
 			"settings": {
