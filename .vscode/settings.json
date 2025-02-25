@@ -1,0 +1,4 @@
+{
+    // Sets a visual guideline
+    "editor.rulers": [120]
+}
