@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo ""
 echo "📜 Adjusting permissions for command history..."
 sudo chown -R $(whoami): /commandhistory
 echo ""
