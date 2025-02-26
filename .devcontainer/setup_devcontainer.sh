@@ -7,7 +7,6 @@ echo ""
 echo "🔧 Granting execute permissions to scripts..."
 chmod +x .devcontainer/install_zsh_plugins.sh
 chmod +x .devcontainer/install_python_dependencies.sh
-chmod +x .devcontainer/merge_develop_to_main.sh
 echo ""
 
 echo "🚀 Running Zsh plugin installation script..."
